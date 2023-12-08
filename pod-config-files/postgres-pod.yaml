@@ -1,0 +1,24 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: db-pod
+  labels:
+    name: db-pod
+    app: voting-app
+spec:
+  containers:
+  - name: db
+    image: postgres
+    resources:
+      limits:
+        memory: "128Mi"
+        cpu: "200m"
+    ports:
+    - containerPort: 5432
+    env:
+    - name: POSTGRES_HOST_AUTH_METHOD
+      value: trust
+    - name: POSTGRES_USER
+      value: "postgres"
+    - name: POSTGRES_PASSWORD
+      value: "postgres"

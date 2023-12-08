@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: worker-pod
+  labels:
+    name: worker-pod
+    app: voting-app
+spec:
+  containers:
+  - name: worker-app
+    image: kodekloud/examplevotingapp_worker
+    resources:
+      limits:
+        memory: "128Mi"
+        cpu: "200m"
