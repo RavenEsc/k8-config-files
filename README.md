@@ -1,1 +1,2 @@
-My first k8 repo
+# My First K8 Application
+From the KodeKloud Beginner Course - YT
